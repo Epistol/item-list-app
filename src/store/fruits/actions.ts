@@ -10,11 +10,10 @@ const actions: ActionTree<FruitState, RootState> = {
         params: {}
       })
     ]).then((result: any) => {
-      const data = result;
-      // TODO : concat all sublevel to first fruit found
-
-      commit("SET_DATA", data);
-
+      const data = result[0]["data"];
+      if (data) {
+        commit("SET_DATA", data);
+      }
       return {
         data
       };

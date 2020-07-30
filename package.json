@@ -21,6 +21,7 @@
     "@vue/composition-api": "^1.0.0-beta.6",
     "commitizen": "^4.1.2",
     "fruit-api": "^1.1.1",
+    "lodash": "^4.17.19",
     "nuxt": "^2.14.0"
   },
   "devDependencies": {
@@ -31,6 +32,7 @@
     "@nuxtjs/eslint-config-typescript": "^3.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/vuetify": "^1.11.2",
+    "@types/lodash": "^4.14.158",
     "@vue/test-utils": "^1.0.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",

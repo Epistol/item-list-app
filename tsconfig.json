@@ -22,6 +22,7 @@
       "./types",
       "@nuxt/types",
       "@types/node",
+      "@types/lodash",
       "@types/webpack-env",
       "@nuxtjs/axios",
       "@nuxtjs/vuetify"
