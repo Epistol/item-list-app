@@ -20,6 +20,12 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head,
+
+  server: {
+    port: 8000, // par défaut : 3000
+    host: '0.0.0.0' // par défaut : localhost
+  },
+
   /*
   ** Global CSS
   */
@@ -53,12 +59,28 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     '@nuxtjs/dotenv',
+    '@nuxtjs/proxy'
   ],
+
+
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    proxy: true
+  },
+
+
+  proxy: {
+    '/api': {
+      target: 'http://[::1]:3000/',
+      secure: false,
+      changeOrigin: true,
+      pathRewrite: { '^/api/': '' }
+    }
+  },
+
   /*
   ** Content module configuration
   ** See https://content.nuxtjs.org/configuration
@@ -71,10 +93,11 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
+        light: {
+          background: '#FFF1ED',
+          primary: colors.pink.lighten5,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,

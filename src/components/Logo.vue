@@ -1,11 +1,25 @@
 <template>
   <div class="VueToNuxtLogo">
-    <div class="Triangle Triangle--two" />
-    <div class="Triangle Triangle--one" />
-    <div class="Triangle Triangle--three" />
-    <div class="Triangle Triangle--four" />
+    <nuxt-link :to="'/'">
+      <!-- <img src="/logo.png" /> -->
+      <div
+        class="v-image__image v-image__image--contain"
+        style="background-image: url('/logo.png'); background-position: center center;"
+      ></div>
+    </nuxt-link>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent, computed } from '@vue/composition-api'
+
+export default defineComponent({
+  name: 'Logo',
+  setup(props, ctx) {
+    return {}
+  },
+})
+</script>
 
 <style>
 .VueToNuxtLogo {
