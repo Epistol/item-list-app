@@ -35,7 +35,7 @@ export default defineComponent({
   },
   setup(props, ctx) {
     const deleteFruit = async (id: string) => {
-      await ctx.root.$store.dispatch('fruits/deleteFruit', id)
+      await ctx.root.$store.dispatch('fruit/deleteFruit', id)
     }
     return { deleteFruit }
   },

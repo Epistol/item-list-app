@@ -10,19 +10,23 @@
     "generate": "nuxt-ts generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
-    "test": "jest",
-    "api": "fruit-api"
+    "api": "fruit-api",
+    "test:e2e": "cross-env BASE_URL=http://localhost:8000 testcafe",
+    "test:unit": "jest"
   },
   "dependencies": {
     "@nuxt/content": "^1.5.0",
     "@nuxt/typescript-runtime": "^1.0.0",
     "@nuxtjs/axios": "^5.12.0",
     "@nuxtjs/proxy": "^2.0.1",
+    "@types/jest": "^26.0.8",
     "@vue/composition-api": "^1.0.0-beta.6",
     "commitizen": "^4.1.2",
+    "cross-env": "^7.0.2",
     "fruit-api": "^1.1.1",
     "lodash": "^4.17.19",
-    "nuxt": "^2.14.0"
+    "nuxt": "^2.14.0",
+    "testcafe": "^1.8.8"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.0",

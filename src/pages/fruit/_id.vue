@@ -19,7 +19,7 @@ export default defineComponent({
     const slug = ctx.root.$route.params?.id
 
     onMounted(async () => {
-      await ctx.root.$store.dispatch('fruits/getFruitData', slug)
+      await ctx.root.$store.dispatch('fruit/getFruitData', slug)
     })
 
     return { slug }

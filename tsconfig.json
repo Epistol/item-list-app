@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "target": "es2020",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["esnext", "esnext.asynciterable", "dom"],
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
+    "noImplicitAny": true,
     "noEmit": true,
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
@@ -23,13 +23,15 @@
       "@nuxt/types",
       "@types/node",
       "@types/lodash",
+      "@types/jest",
       "@types/webpack-env",
       "@nuxtjs/axios",
-      "@nuxtjs/vuetify"
+      "@nuxtjs/vuetify",
+      "testcafe"
     ],
     "skipLibCheck": true,
+    "resolveJsonModule": true
   },
-  "exclude": ["node_modules", ".nuxt", "dist"],
   "globals": {
     "it": false,
     "expect": false

@@ -4,9 +4,11 @@
       <v-row dense>
         <v-col cols="12">
           <AddFruit></AddFruit>
-          <template v-for="fruit in fruits">
-            <FruitExcerpt :data="fruit" :key="fruit.title" />
-          </template>
+          <div v-if="fruits" data-test="list-items">
+            <template v-for="fruit in fruits">
+              <FruitExcerpt :data="fruit" :key="fruit.title" />
+            </template>
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -27,7 +29,7 @@ export default defineComponent({
   },
   setup(props, ctx) {
     const fruits = computed<Fruit[]>(
-      () => ctx.root.$store.getters['fruits/data']
+      () => ctx.root.$store.getters['fruit/data']
     )
 
     return {

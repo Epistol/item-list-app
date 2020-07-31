@@ -6,22 +6,21 @@
   </v-layout>
 </template>
 
-
 <script lang="ts">
-import { defineComponent, computed, onMounted } from '@vue/composition-api'
-import List from '~/components/Fruits/List.vue'
+import { defineComponent, computed, onMounted } from "@vue/composition-api";
+import List from "~/components/Fruits/List.vue";
 
 export default defineComponent({
-  name: 'Index',
+  name: "Index",
   components: {
-    List,
+    List
   },
   setup(props, ctx) {
     onMounted(async () => {
-      await ctx.root.$store.dispatch('fruits/getFruitsData')
-    })
+      await ctx.root.$store.dispatch("fruit/getFruitsData");
+    });
 
-    return {}
-  },
-})
+    return {};
+  }
+});
 </script>

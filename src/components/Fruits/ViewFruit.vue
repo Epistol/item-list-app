@@ -25,7 +25,7 @@ export default defineComponent({
   name: 'ViewFruit',
   setup(props, ctx) {
     const fruit = computed<Fruit>(
-      () => ctx.root.$store.getters['fruits/fruitData']
+      () => ctx.root.$store.getters['fruit/fruitData']
     )
 
     return { fruit }
