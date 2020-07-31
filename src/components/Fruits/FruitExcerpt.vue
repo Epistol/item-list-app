@@ -1,11 +1,13 @@
 <template>
-  <div v-if="data">
+  <div v-if="data" class="mt-6">
     <v-card class="mx-auto" max-width="400">
-      <v-img class="black--text align-end" height="200px" :src="data.image">
-        <v-card-title>{{data.name}}</v-card-title>
-      </v-img>
+      <nuxt-link :to="'/fruit/'+data.id">
+        <v-img class="black--text align-end" height="200px" :src="data.image"></v-img>
+      </nuxt-link>
 
-      <v-card-subtitle class="pb-0 text-bold" :style="'color:'+data.color">{{data.price}}</v-card-subtitle>
+      <v-card-text>
+        <h2 class="title" :style="'color:'+data.color">{{data.name}}</h2>
+      </v-card-text>
 
       <!-- <v-card-text class="text--primary">
         <div>Whitehaven Beach</div>

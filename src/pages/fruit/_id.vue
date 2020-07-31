@@ -1,16 +1,16 @@
 <template>
   <div class="w-full">
-    <FruitArticle />
+    <ViewFruit />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, reactive, onMounted } from '@vue/composition-api'
-import FruitArticle from '~/components/Fruits/FruitArticle.vue'
+import ViewFruit from '~/components/Fruits/ViewFruit.vue'
 export default defineComponent({
   name: 'PageFruit',
   components: {
-    FruitArticle,
+    ViewFruit,
   },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setup(props, ctx) {

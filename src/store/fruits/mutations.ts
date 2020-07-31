@@ -6,7 +6,6 @@ import { Fruit } from "../../../types/fruit";
 const mutations: MutationTree<FruitState> = {
   SET_DATA(state, data: any) {
     // For each entry, we'll check if it contain an object
-
     let goodFruits: Fruit[] = [];
 
     const addFruit = (data: any) => {
@@ -27,6 +26,17 @@ const mutations: MutationTree<FruitState> = {
     Object.entries(data.data).map((value, index): any => {
       // If it is an object with data in it (or another object)
       addFruit(value[1]);
+      // If it's one the fruits that we added, we need to search in the array (not a plain object)
+      if (value[0] === "more") {
+        const addedFruits: any = value[1];
+
+        addedFruits.map((element: any) => {
+          if (_.has(element, "description")) {
+            // It's a fruit
+            goodFruits.push(element);
+          }
+        });
+      }
     });
 
     state.data = goodFruits;
@@ -38,11 +48,6 @@ const mutations: MutationTree<FruitState> = {
   },
 
   DELETE_FRUIT(state, id: any) {
-    console.log("DELETE_FRUIT -> state.data", state.data);
-    console.log(
-      "DELETE_FRUIT -> state.data 2",
-      state.data.filter((item: any) => item.id !== id)
-    );
     state.data = state.data.filter((item: any) => item.id !== id);
   }
 };

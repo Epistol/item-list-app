@@ -97,8 +97,8 @@ export default {
       themes: {
         light: {
           background: '#FFF1ED',
-          primary: colors.pink.lighten5,
-          accent: colors.grey.darken3,
+          primary: "#FF8197",
+          accent: colors.grey.darken4,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
