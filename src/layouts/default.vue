@@ -2,6 +2,9 @@
   <v-app dark id="main" :style="{background: $vuetify.theme.themes[theme].background}">
     <v-main>
       <v-container>
+        <div class="text-center">
+          <logo />
+        </div>
         <nuxt />
       </v-container>
     </v-main>
@@ -12,7 +15,12 @@
 </template>
 
 <script>
+import Logo from '~/components/Logo.vue'
+
 export default {
+  components: {
+    Logo,
+  },
   data() {
     return {
       clipped: false,
@@ -33,7 +41,6 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js',
     }
   },
 

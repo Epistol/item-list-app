@@ -30,6 +30,20 @@ const mutations: MutationTree<FruitState> = {
     });
 
     state.data = goodFruits;
+  },
+
+  SET_FRUIT_DATA(state, data: any) {
+    // For each entry, we'll check if it contain an object
+    state.fruitData = data;
+  },
+
+  DELETE_FRUIT(state, id: any) {
+    console.log("DELETE_FRUIT -> state.data", state.data);
+    console.log(
+      "DELETE_FRUIT -> state.data 2",
+      state.data.filter((item: any) => item.id !== id)
+    );
+    state.data = state.data.filter((item: any) => item.id !== id);
   }
 };
 

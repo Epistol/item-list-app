@@ -1,7 +1,8 @@
 // import { FruitState } from "@@/types";
 
 const state = (): any => ({
-  data: []
+  data: [],
+  fruitData: []
 });
 
 export default state;
