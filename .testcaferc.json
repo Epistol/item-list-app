@@ -1,0 +1,10 @@
+{
+  "src": "./test/e2e/specs/**/*.spec.ts",
+  "selectorTimeout": 40000,
+  "assertionTimeout": 10000,
+  "pageLoadTimeout": 10000,
+  "screenshots": {
+    "takeOnFails": true,
+    "path": "./test/e2e/screenshots/"
+  }
+}

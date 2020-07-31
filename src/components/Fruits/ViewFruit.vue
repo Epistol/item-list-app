@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-card class="mx-auto" max-width="400">
       <v-img :src="fruit.image" class="primary--text align-end" height="200px">
-        <v-card-title>{{fruit.name}}</v-card-title>
+        <v-card-title data-test="fruit-title">{{fruit.name}}</v-card-title>
       </v-img>
       <v-card-text class="text--primary">
         <span>{{fruit.description}}</span>

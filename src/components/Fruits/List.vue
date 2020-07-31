@@ -4,9 +4,9 @@
       <v-row dense>
         <v-col cols="12">
           <AddFruit></AddFruit>
-          <div v-if="fruits" data-test="list-items">
+          <div v-if="fruits">
             <template v-for="fruit in fruits">
-              <FruitExcerpt :data="fruit" :key="fruit.title" />
+              <FruitExcerpt :data="fruit" :key="fruit.title" data-test="list-items" />
             </template>
           </div>
         </v-col>

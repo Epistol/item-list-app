@@ -11,5 +11,12 @@ module.exports = {
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    "@typescript-eslint/no-unused-vars": "warn",
+    "curly": "off",
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+  }
 }
