@@ -1,10 +1,10 @@
 import { Selector, t, ClientFunction } from "testcafe";
 import IndexPage from "../fragments/components/pages/index";
-import FruitPage from "../fragments/components/pages/fruitPage";
+import FruitCreate from "../fragments/components/fruitCreate";
 
 const baseUrl = "http://localhost:8000";
 const indexPage = new IndexPage();
-const fruitPage = new FruitPage();
+const addFruitModal = new FruitCreate();
 const getPageUrl = ClientFunction(() => window.location.href);
 
 fixture("Add fruit")
@@ -14,9 +14,20 @@ fixture("Add fruit")
     console.info(logs.error); // eslint-disable-line
   });
 
-test("should be to add fruits", async (t: any) => {
+test("Should be able to add fruits", async (t: any) => {
   await t.expect(getPageUrl()).contains("/");
   await indexPage.addFruit();
+  await addFruitModal.addFruit();
 
-  await t.expect(indexPage.listItems.exists).ok();
+  const cherry = indexPage.listItems.nth(-1).withText("Cherry");
+  const fruitExist = cherry.exists;
+  await t.expect(fruitExist).ok();
+});
+
+test("Should be able to delete fruit", async (t: any) => {
+  await indexPage.deleteFruit();
+
+  const cherry = indexPage.listItems.nth(-1).withText("Cherry");
+  const fruitExist = cherry.exists;
+  await t.expect(fruitExist).notOk();
 });

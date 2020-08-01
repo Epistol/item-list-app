@@ -6,17 +6,11 @@
       </nuxt-link>
 
       <v-card-text>
-        <h2 class="title" :style="'color:'+data.color">{{data.name}}</h2>
+        <h2 class="title" :style="'color:'+data.color" data-test="title-item">{{data.name}}</h2>
       </v-card-text>
 
-      <!-- <v-card-text class="text--primary">
-        <div>Whitehaven Beach</div>
-
-        <div>Whitsunday Island, Whitsunday Islands</div>
-      </v-card-text>-->
-
       <v-card-actions>
-        <v-btn color="red" text @click="deleteFruit(data.id)">Delete</v-btn>
+        <v-btn color="red" text @click="deleteFruit(data.id)" data-test="delete-button">Delete</v-btn>
       </v-card-actions>
     </v-card>
   </div>

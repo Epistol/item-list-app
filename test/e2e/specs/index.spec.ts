@@ -17,7 +17,7 @@ fixture("Home page")
 test("should be able to see fruits", async (t: any) => {
   await t.expect(getPageUrl()).contains("/");
   await t.expect(indexPage.listItems.exists).ok();
-  await t.expect(indexPage.addButton.exists).ok();
+  await t.expect(indexPage.addBtn.exists).ok();
 });
 
 test("should be able to click on a fruit", async (t: any) => {

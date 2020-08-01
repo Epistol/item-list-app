@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "go": "yarn api && yarn dev",
     "commit": "git-cz",
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
