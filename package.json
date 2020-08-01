@@ -13,7 +13,7 @@
     "lint": "yarn lint:js",
     "api": "fruit-api",
     "test:e2e": "cross-env BASE_URL=http://localhost:8000 testcafe",
-    "test:unit": "jest"
+    "test:unit": "jest ./test/unit"
   },
   "dependencies": {
     "@nuxt/content": "^1.5.0",
@@ -53,5 +53,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "test/e2e/"
+    ]
   }
 }

@@ -89,4 +89,7 @@ sw.*
 # Vim swap files
 *.swp
 
+test/unit/results/*.xml
+test/e2e/results/*.xml
+/test/e2e/videos
 test/e2e/screenshots
