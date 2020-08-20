@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "es2020",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["esnext", "esnext.asynciterable", "dom"],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "@/*": ["./src/*"],
+      "~~/*": ["./*"],
+      "@@/*": ["./*"]
+    },
+    "types": [
+      "./types",
+      "@nuxt/types",
+      "@types/node",
+      "@types/lodash",
+      "@types/jest",
+      "@types/webpack-env",
+      "@nuxtjs/axios",
+      "@nuxtjs/vuetify",
+      "testcafe"
+    ],
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  },
+  "globals": {
+    "it": false,
+    "expect": false
+  },
+  "allowSyntheticDefaultImports": true
+}
